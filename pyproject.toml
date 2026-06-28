@@ -1,0 +1,107 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# -- Project metadata -----------------------------------------
+[project]
+name = "pickal"
+version = "0.1.0"
+description = "Identify events in a picture and save them to calendar"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Jose Etxeberria", email = "jetxebemen@gmail.com" }]
+requires-python = ">=3.13"
+dependencies = [
+    "cyclopts>=3.0",
+    "pydantic-settings>=2.0",
+    "rich>=13.0",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+pickal = "pickal.__main__:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "ruff>=0.9",
+    "mypy>=1.10",
+    "types-pyyaml>=6.0",
+    "pdoc>=7.0",
+    "codecov>=2.1.0",
+    "pre-commit>=3.0.0",
+    "semantic-release>=21.0.0",
+]
+
+# -- Ruff ----------------------------------------------------
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "UP", "B", "C4", "RUF"]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["pickal"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+# -- Mypy ----------------------------------------------------
+[tool.mypy]
+python_version = "3.13"
+strict = true
+
+# -- Pytest --------------------------------------------------
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+# -- Hatch ---------------------------------------------------
+[tool.hatch.build.targets.wheel]
+packages = ["src/pickal"]
+
+# -- Semantic Release --------------------------------------------
+[tool.semantic_release]
+branch = "main"
+version_variable = "src/pickal/__init__.py:__version__"
+version_source = "commit"
+upload_to_release = true
+pydoc-markdown = { git = "https://github.com/pawamoy/pydoc-markdown.git", branch = "master" }
+
+# -- Codecov ----------------------------------------------------
+[tool.coverage.run]
+source = ["src/pickal"]
+omit = ["*/tests/*", "*/test_*", "*/__init__.py"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    'if __name__ == "__main__":',
+]
+
+# -- Pre-commit --------------------------------------------------
+[tool.pre-commit]
+repos = [
+    {
+        repo = "https://github.com/pre-commit/pre-commit-hooks",
+        rev = "v4.4.0",
+        hooks = [
+            { id = "trailing-whitespace" }
+            { id = "end-of-file-fixer" }
+            { id = "check-yaml" }
+            { id = "check-added-large-files" }
+        ]
+    }
+    {
+        repo = "https://github.com/astral-sh/ruff-pre-commit",
+        rev = "v0.3.0",
+        hooks = [
+            { id = "ruff" }
+        ]
+    }
+]

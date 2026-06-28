@@ -1,0 +1,59 @@
+# ============================================================
+# Base Configuration Defaults
+# Atomic Spec: Configuration Management § 4 — Base (Mandatory)
+# Policy: ALL defaults live HERE. Never hardcode in application logic.
+# ============================================================
+
+# Core settings
+debug: false
+env: development
+name: pickal
+
+# Paths
+config_dir: /etc/pickal
+data_dir: /var/lib/pickal
+cache_dir: /var/cache/pickal
+log_dir: /var/log/pickal
+
+# Database
+database:
+  url: null
+  max_connections: 10
+  timeout: 30
+  pool_size: 5
+
+# Logging
+logging:
+  # Log level for the application. Valid: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  level: "WARNING"
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  file: null
+  console: true
+
+# Network
+network:
+  host: 127.0.0.1
+  port: 8080
+  timeout: 30
+  max_retries: 3
+
+# Security
+security:
+  secret_key: null
+  token_expiry: 3600
+  enable_cors: false
+  cors_origins:
+    - "*"
+
+# Features
+enable_metrics: true
+enable_tracing: false
+enable_profiling: false
+
+# TODO: Add your application-specific configuration sections below.
+# Each section should map to a Pydantic Settings model in config.py.
+#
+# Example:
+# server:
+#   host: "127.0.0.1"
+#   port: 8080

@@ -1,0 +1,77 @@
+# pickal — License Information
+
+## Overview
+
+This document outlines the license information for pickal.
+
+## License
+
+pickal is licensed under the MIT License.
+
+### MIT License
+
+```
+MIT License
+
+Copyright (c)  Jose Etxeberria
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## Third-party Licenses
+
+pickal uses several third-party libraries, each with its own license:
+
+### Dependencies
+
+| Library | License | Purpose |
+|---------|---------|---------|
+| cyclopts | MIT | CLI framework |
+| pydantic-settings | MIT | Configuration management |
+| rich | MIT | Rich formatting and logging |
+| pytest | MIT | Testing framework |
+| ruff | MIT | Linting and formatting |
+| mypy | MIT | Type checking |
+| uv | MIT | Package management |
+
+### License Compatibility
+
+All third-party licenses are compatible with the MIT license and allow for commercial use, modification, and distribution.
+
+## Contribution License Agreement
+
+By contributing to pickal, you agree that your contributions will be licensed under the MIT License.
+
+## Attribution
+
+If you use pickal in your project, please consider giving attribution:
+
+```
+pickal - Identify events in a picture and save them to calendar
+Copyright (c)  Jose Etxeberria
+Licensed under the MIT License
+```
+
+## Support
+
+For questions about licensing, please open an issue or contact the maintainers.
+
+## Disclaimer
+
+This software is provided "as is" without warranty of any kind. The authors are not liable for any claims, damages, or other liability arising from the use of this software.

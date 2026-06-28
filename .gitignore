@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+*.whl
+
+# Virtual environments (uv-managed)
+.venv/
+venv/
+env/
+
+# Distribution artifacts
+*.tar.gz
+*.lock
+
+# Tool caches
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment files (secrets must never be committed)
+.env
+.env.local
+config.local.yaml
+
+# Copier answers file (contains template vars — may contain private info)
+.copier-answers.yml
